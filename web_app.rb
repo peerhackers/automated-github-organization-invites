@@ -7,7 +7,9 @@ require 'octokit'
 token = ENV['GITHUB_TOKEN']
 org_name = ENV['ORGANIZATION_NAME']
 background_choice = ENV['BACKGROUND_COLOR']
-
+config.action_dispatch.default_headers = {
+  'X-Frame-Options' => 'ALLOWALL'
+}
 if background_choice == 'green'
     background_css = "/css/background_colors/green.css"
 elsif background_choice == 'blue'
